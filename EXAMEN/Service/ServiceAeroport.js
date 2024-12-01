@@ -1,7 +1,7 @@
 import {Aeropuerto} from "../model/Aeropuerto.js";
 
 export class ServiceAeroport{
-    #url = "????";
+    #url = "poner url de fecth";
 
 
     async getAllAeroport(){
