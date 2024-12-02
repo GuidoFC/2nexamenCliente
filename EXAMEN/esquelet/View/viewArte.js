@@ -108,8 +108,17 @@ crearLi();
         elemtsCateg[i].textContent = listaCatetegoria[i -1].nombre;
     }
 
+    const selectFormu = document.querySelector("#form-categoria");
+    for (let i = 1; i < listaCatetegoria.length; i++) {
+
+        const elem = document.createElement("option");
+        elem.value = listaCatetegoria[i].nombre;
+        elem.textContent = listaCatetegoria[i].nombre;
+        selectFormu.appendChild(elem);
+    }
+
     const listaArte = await servicioCategoria.listaObrasArter()
-    console.log("get?", listaArte);
+    console.log( listaArte);
 
 
 
