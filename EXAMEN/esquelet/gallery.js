@@ -29,7 +29,7 @@ function scalePreserveAspectRatio(imgW,imgH,maxW,maxH){
     return(Math.min((maxW/imgW),(maxH/imgH)));
 }
 
-function setImage(url){
+export function setImage(url){
     img.src=url;
     resizeImage();
 }
