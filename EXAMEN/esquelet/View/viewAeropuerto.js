@@ -68,14 +68,47 @@ function ponerFuncionesTododBotones() {
     }
 }
 
+function cambiarNombreCategoria(){
+
+    // const elementA = elemtsCateg.querySelectorAll("a");
+    // console.log(elementA)
+    //
+    // for (let i = 0; i < elemtsCateg.length; i++) {
+    //     const elementA = elemtsCateg[i].querySelector("a");
+    //     console.log(elementA);
+    // }
+}
+
+function crearLi(){
+    const getEleUL = document.querySelector("#filters");
+    for (let i = 0; i < 1; i++) {
+        const elemLI = document.createElement("li");
+        const elemA = document.createElement("a");
+        elemA.textContent = "Funciona?"
+        getEleUL.appendChild(elemLI);
+        elemLI.appendChild(elemA);
+    }
 
 
-
+}
+crearLi();
 (async () => {
     ponerFuncionesTododBotones()
+
     console.log("hola");
     const servicioCategoria = new ServiceAeroport()
     const listaCatetegoria = await servicioCategoria.getAllCategorias();
+    // recuerda que es un Array
     console.log(listaCatetegoria);
+
+    const elemtsCateg = document.querySelectorAll("ul#filters a");
+
+    console.log(elemtsCateg);
+    for (let i = 1; i < elemtsCateg.length; i++) {
+        elemtsCateg[i].textContent = listaCatetegoria[i -1].nombre;
+    }
+
+
+
 
 })();
