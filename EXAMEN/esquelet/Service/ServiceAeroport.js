@@ -1,11 +1,17 @@
-import {Aeropuerto} from "../model/Aeropuerto.js";
+import {Categorias} from "../model/Categorias.js";
 
 export class ServiceAeroport{
-    #url = "poner url de fecth";
+    #url = "https://theteacher.codiblau.com/public/exercicis/galeria/categories-list";
 
 
-     getAllAeroport(){
-        console.log("Funciona!!!!")
+     async getAllCategorias(){
+         const response = await fetch(this.#url)
+         const data = await response.json()
+
+         return  data.map(r => {
+            return  new Categorias(r)
+         })
+
     }
 
 

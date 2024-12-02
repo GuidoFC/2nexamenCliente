@@ -56,7 +56,7 @@ crearBotones();
 
 function ponerFuncionesTododBotones() {
     const contendorBtn = document.querySelectorAll(".btnIMG");
-    console.log(contendorBtn);
+    // console.log(contendorBtn);
 
     let contador = 0;
     for (const boton of contendorBtn) {
@@ -68,10 +68,14 @@ function ponerFuncionesTododBotones() {
     }
 }
 
-ponerFuncionesTododBotones()
+
 
 
 (async () => {
-
+    ponerFuncionesTododBotones()
+    console.log("hola");
+    const servicioCategoria = new ServiceAeroport()
+    const listaCatetegoria = await servicioCategoria.getAllCategorias();
+    console.log(listaCatetegoria);
 
 })();
