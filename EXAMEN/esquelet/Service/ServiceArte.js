@@ -28,18 +28,18 @@ export class ServiceArte {
 
     }
 
-    async guardarFoto(){
-        const response2 = await fetch(this.#urlGurarda, {
+    async guardarFoto(objet){
+        const rawResponse  = await fetch(this.#urlGurarda, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
-            }
+            },
+            body: JSON.stringify({titol: objet.titol, url: objet.url, data: objet.data, categoria: objet.categoria })
         })
-        const data2 = await response2.json()
+        const content = await rawResponse.json();
 
-        return  data2.map(r => {
-            return new Galeria(r.iditem, r.titol, r.url, r.data, r.categoria)
-        })
+        console.log(content);
+
 
     }
 

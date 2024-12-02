@@ -1,5 +1,6 @@
 import {ServiceArte} from "../Service/ServiceArte.js";
 import {original, grayscale, invert, sepia, setImage} from "../gallery.js"
+import {Galeria} from "../model/Galeria.js";
 
 
 //
@@ -128,11 +129,27 @@ crearLi();
 
     // FIXME es submit o click?
     bntEnviar.addEventListener("click", function (){
+
+        const enviar = [];
+
         const inputTitol = document.querySelector("#form-titol").value;
         const inputUrl = document.querySelector("#form-url").value;
         const inputDAta = document.querySelector("#form-data").value;
         const inputSelect = document.querySelector("#form-categoria").value;
-        console.log(inputTitol, inputUrl, inputDAta, inputSelect);
+
+        const garleriaA = new Galeria(null, inputTitol, inputUrl, inputDAta);
+
+        console.log( garleriaA);
+        console.log(typeof garleriaA);
+
+        const myJSON = JSON.stringify(garleriaA);
+
+        console.log( myJSON);
+        console.log(typeof myJSON);
+
+        servicioCategoria.guardarFoto(garleriaA);
+
+
     });
 
 
