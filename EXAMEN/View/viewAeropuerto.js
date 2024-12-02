@@ -9,7 +9,9 @@ import {ServiceAeroport} from "../Service/ServiceAeroport.js";
 
     // piensa que listaAeropuerto es un array
     // lo usare en un addEventlistener, poner aqui el advenListener
-
+    // todo
+    // TODO debugger usando la palabra debugger
+    //  todo o puedes irte al html y usar el debugger de webstorm!!!
     service.getAllAeroport();
 
 
