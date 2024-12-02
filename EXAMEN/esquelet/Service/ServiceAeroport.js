@@ -4,7 +4,7 @@ export class ServiceAeroport{
     #url = "poner url de fecth";
 
 
-    async getAllAeroport(){
+     getAllAeroport(){
         console.log("Funciona!!!!")
     }
 
