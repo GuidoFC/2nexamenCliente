@@ -121,5 +121,20 @@ crearLi();
     console.log( listaArte);
 
 
+    // crearemos un boton para enviar la respuesta
+    const bntEnviar = document.querySelector("#form-send");
+
+
+
+    // FIXME es submit o click?
+    bntEnviar.addEventListener("click", function (){
+        const inputTitol = document.querySelector("#form-titol").value;
+        const inputUrl = document.querySelector("#form-url").value;
+        const inputDAta = document.querySelector("#form-data").value;
+        const inputSelect = document.querySelector("#form-categoria").value;
+        console.log(inputTitol, inputUrl, inputDAta, inputSelect);
+    });
+
+
 
 })();
