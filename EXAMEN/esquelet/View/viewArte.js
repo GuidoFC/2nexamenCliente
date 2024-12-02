@@ -1,4 +1,4 @@
-import {ServiceAeroport} from "../Service/ServiceAeroport.js";
+import {ServiceArte} from "../Service/ServiceArte.js";
 import {original, grayscale, invert, sepia, setImage} from "../gallery.js"
 
 
@@ -96,7 +96,7 @@ crearLi();
     ponerFuncionesTododBotones()
 
     console.log("hola");
-    const servicioCategoria = new ServiceAeroport()
+    const servicioCategoria = new ServiceArte()
     const listaCatetegoria = await servicioCategoria.getAllCategorias();
     // recuerda que es un Array
     console.log(listaCatetegoria);
@@ -107,6 +107,7 @@ crearLi();
     for (let i = 1; i < elemtsCateg.length; i++) {
         elemtsCateg[i].textContent = listaCatetegoria[i -1].nombre;
     }
+
 
 
 

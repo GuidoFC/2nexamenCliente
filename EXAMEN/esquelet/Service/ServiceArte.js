@@ -1,7 +1,9 @@
 import {Categorias} from "../model/Categorias.js";
+import {Galeria} from "../model/Galeria.js";
 
-export class ServiceAeroport{
+export class ServiceArte {
     #url = "https://theteacher.codiblau.com/public/exercicis/galeria/categories-list";
+    #urlListar = "https://theteacher.codiblau.com/public/exercicis/galeria/categories-list";
 
 
      async getAllCategorias(){
@@ -11,6 +13,14 @@ export class ServiceAeroport{
          return  data.map(r => {
             return  new Categorias(r)
          })
+
+    }
+
+    async listaObrasArter(){
+        const response = await fetch(this.#urlListar)
+        const data = await response.json()
+
+        return  data
 
     }
 
