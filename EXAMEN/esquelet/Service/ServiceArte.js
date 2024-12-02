@@ -3,7 +3,7 @@ import {Galeria} from "../model/Galeria.js";
 
 export class ServiceArte {
     #url = "https://theteacher.codiblau.com/public/exercicis/galeria/categories-list";
-    #urlListar = "https://theteacher.codiblau.com/public/exercicis/galeria/categories-list";
+    #urlListar = "https://theteacher.codiblau.com/public/exercicis/galeria/list";
 
 
      async getAllCategorias(){
@@ -17,10 +17,12 @@ export class ServiceArte {
     }
 
     async listaObrasArter(){
-        const response = await fetch(this.#urlListar)
-        const data = await response.json()
+        const response2 = await fetch(this.#urlListar)
+        const data2 = await response2.json()
 
-        return  data
+        return  data2.map(r => {
+            return new Galeria(r.iditem, r.titol, r.url, r.data, r.categoria)
+        })
 
     }
 

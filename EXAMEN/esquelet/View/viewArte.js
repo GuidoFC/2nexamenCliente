@@ -95,11 +95,11 @@ crearLi();
 (async () => {
     ponerFuncionesTododBotones()
 
-    console.log("hola");
+
     const servicioCategoria = new ServiceArte()
     const listaCatetegoria = await servicioCategoria.getAllCategorias();
     // recuerda que es un Array
-    console.log(listaCatetegoria);
+    // console.log(listaCatetegoria);
 
     const elemtsCateg = document.querySelectorAll("ul#filters a");
 
@@ -108,7 +108,8 @@ crearLi();
         elemtsCateg[i].textContent = listaCatetegoria[i -1].nombre;
     }
 
-
+    const listaArte = await servicioCategoria.listaObrasArter()
+    console.log("get?", listaArte);
 
 
 
