@@ -1,18 +1,47 @@
 import {ServiceAeroport} from "../Service/ServiceAeroport.js";
+import {original, grayscale, invert, sepia} from "../gallery.js"
 
-// intenta crear los elementos que necesitas, para luego usarlo.
+
+//
+function ponerFuncionesRadios(){
+    const getOriginal = document.querySelector("#original");
+
+    getOriginal.addEventListener('click', function () {
+        original();
+    })
+
+    const getGreyScale = document.querySelector("#grayscale");
+
+
+    getGreyScale.addEventListener('click', function () {
+        grayscale();
+    })
+
+    const getinvert = document.querySelector("#inverted");
+
+
+    getinvert.addEventListener('click', function () {
+        invert();
+    })
+
+
+
+    const getSepia = document.querySelector("#sepia");
+
+
+    getSepia.addEventListener('click', function () {
+        sepia();
+    })
+}
+
+function crearBotones(){
+
+}
+
+ponerFuncionesRadios();
 
 (async () => {
 
-    const service = new ServiceAeroport
-    // const listaAeropuerto = await service.getAllAeroport();
-
-    // piensa que listaAeropuerto es un array
-    // lo usare en un addEventlistener, poner aqui el advenListener
-    // todo
-    // TODO debugger usando la palabra debugger
-    //  todo o puedes irte al html y usar el debugger de webstorm!!!
-    service.getAllAeroport();
 
 
 })();

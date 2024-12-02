@@ -34,11 +34,12 @@ function setImage(url){
     resizeImage();
 }
 
-var original = function() {
+export var original = function() {
+    console.log("Hola")
     resizeImage()
 };
 
-var sepia = function() {
+export var sepia = function() {
     resizeImage()
     const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
     const data = imageData.data;
@@ -52,7 +53,7 @@ var sepia = function() {
     ctx.putImageData(imageData, 0, 0);
 }
 
-var invert = function() {
+export var invert = function() {
     resizeImage()
     const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
     const data = imageData.data;
@@ -64,7 +65,7 @@ var invert = function() {
     ctx.putImageData(imageData, 0, 0);
 };
 
-var grayscale = function() {
+export var grayscale = function() {
     resizeImage()
     const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
     const data = imageData.data;
